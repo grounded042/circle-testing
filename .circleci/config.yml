@@ -1,0 +1,14 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.11.1
+    steps:
+      - checkout
+      - run:
+          name: download go modules
+          command: go mod download
+      - run:
+          name: build
+          command: go build
