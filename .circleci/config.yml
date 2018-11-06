@@ -7,6 +7,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: go modules bug workaround
+          command: go get k8s.io/client-go@release-9.0 # do this to "reset" the hash...
+      - run:
           name: download go modules
           command: go mod download
       - run:
