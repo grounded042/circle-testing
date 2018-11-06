@@ -12,3 +12,29 @@ jobs:
       - run:
           name: build
           command: go build
+  release:
+    docker:
+      - image: cibuilds/github:0.10
+    steps:
+      - checkout
+      - run:
+          name: release on github
+          command: |
+            git describe --abbrev=0 --tags
+            echo "releasing..."
+workflows:
+  version: 2
+  build-n-release:
+    jobs:
+      - build:
+          filters:  # required since `release` has tag filters AND requires `build`
+            tags:
+              only: /.*/
+      - release:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              only: /^master/
