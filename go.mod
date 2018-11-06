@@ -8,5 +8,5 @@ require (
 	golang.org/x/text v0.3.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	k8s.io/apimachinery v0.0.0-20181101131016-0aa9751e8aaf // indirect
-	k8s.io/client-go v2.0.0-alpha.0.0.20181026150422-13596e875acc+incompatible
+	k8s.io/client-go v2.0.0-alpha.0.0.20181026150422-13596e875acc+incompatible // indirect
 )
