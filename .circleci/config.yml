@@ -16,7 +16,7 @@ jobs:
           name: coveralls
           command: |
             go get github.com/mattn/goveralls
-	          goveralls -coverprofile=cover.out -service=circle-ci -repotoken=$COVERALLS_TOKEN
+            goveralls -coverprofile=cover.out -service=circle-ci -repotoken=$COVERALLS_TOKEN
       - run:
           name: build
           command: go build
