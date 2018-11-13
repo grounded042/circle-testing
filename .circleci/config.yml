@@ -5,6 +5,9 @@ jobs:
     docker:
       - image: circleci/golang:1.11.2
     steps:
+      - run:
+          name: clean modules
+          command: go clean -modcache
       - checkout
       - run:
           name: install modules
