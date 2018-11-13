@@ -7,6 +7,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: clean modules
+          command: go clean -modcache
+      - run:
           name: install modules
           command: go mod download
       - run:
